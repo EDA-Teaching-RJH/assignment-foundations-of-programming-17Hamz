@@ -1,5 +1,3 @@
-def main():
-    names, ranks, divisions, id = init_database()    
 
 
 def init_database():
@@ -7,11 +5,7 @@ def init_database():
     ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lt. Commander"]
     division = ["Command", "Command", "Operations", "Security", "Engineering"]
     id = [1, 2, 3, 4, 5]
-    add_member()
     return names, ranks, division, id
-
-if __name__ == "__main__":
-    main()
 
 def display_menu():
     student_name = input("what is your name")
@@ -81,7 +75,21 @@ def update_rank(names, ranks, ids):
         print("Error inavlid id")
     return names, ranks, ids    
 
+def display_roster(names, ranks, divs, ids):
+    print("Table of crew members")
+    print("Name | Rank | Division | ID")
+    print("______________________________")
+    for i in range(len(names)):
+        print(names[i]+ " | "  + ranks[i] + " | " + divs[i] + " | " + str(ids[i]))
+        print("______________________________")
 
+def main():
+    names, ranks, divisions, id = init_database()
+    display_roster(names, ranks, divisions, id)   
+
+
+if __name__ == "__main__":
+    main()
 
 
     
