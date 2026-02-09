@@ -7,6 +7,7 @@ def init_database():
     ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lt. Commander"]
     division = ["Command", "Command", "Operations", "Security", "Engineering"]
     id = [1, 2, 3, 4, 5]
+    add_member()
     return names, ranks, division, id
 
 if __name__ == "__main__":
@@ -29,20 +30,19 @@ def display_menu():
     return user_choice
 
 def add_member(names, ranks, divs, ids):
+    """
+    Adds a new crew member. Checks that the id is unique and the rank is valid.
+    """
     new_name = input("what is the name of the member you want to add")
     new_division = input ("What is the divsion you want to add")
     new_rank = input("What is the rank of the member").strip()
     new_id = int(input("What is the id of the new member").strip())
     valid_rank = False
-    for rank in ranks:
-        if new_rank == rank:
-            valid_rank = True
-            break
+    if new_rank in ranks:
+        valid_rank = True
     valid_id = True
-    for id in ids:
-        if new_id == id:
-            valid_id = False
-            break 
+    if new_id in ids:
+        valid_id = False
     if valid_id and valid_rank:
         names.append(new_name)
         divs.append(new_division)
@@ -52,6 +52,26 @@ def add_member(names, ranks, divs, ids):
         print("Invalid Rank, please use a valid TNG rank")
     else:
         print("ID already in use, please use another ID")
-    return(names, ranks, divs, ids)    
+    return names, ranks, divs, ids   
+
+
+def remove_member(names, ranks, divs, ids):
+    """
+    Remove a member using their ID
+    """
+    id_to_remove = input("Enter member ID to remove: ")
+    if id_to_remove in ids:
+        index_to_remove = ids.index(id_to_remove)
+        names.pop(index_to_remove)
+        ranks.pop(index_to_remove)
+        divs.pop(index_to_remove)
+        ids.pop(index_to_remove)
+        print("Member has been removed")
+    else:
+        print ("Id not found")
+    return names, ranks, divs, ids
+
+
+
     
 
