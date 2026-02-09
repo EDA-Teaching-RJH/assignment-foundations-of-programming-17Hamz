@@ -12,3 +12,6 @@ def init_database():
 
 if __name__ == "__main__":
     main()
+
+def display_menu():
+    name()
