@@ -71,6 +71,17 @@ def remove_member(names, ranks, divs, ids):
         print ("Id not found")
     return names, ranks, divs, ids
 
+def update_rank(names, ranks, ids):
+    id_to_update = input("Enter Id to update rank")
+    if id_to_update in ids:
+        new_rank = input("Enter updated rank")
+        index_to_update = ids.index(id_to_update)
+        ranks[index_to_update] = new_rank
+    else:    
+        print("Error inavlid id")
+    return names, ranks, ids    
+
+
 
 
     
