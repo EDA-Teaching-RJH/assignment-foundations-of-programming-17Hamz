@@ -79,17 +79,25 @@ def display_roster(names, ranks, divs, ids):
     print("Table of crew members")
     print("Name | Rank | Division | ID")
     print("______________________________")
-    for i in range(len(names)):
-        print(names[i]+ " | "  + ranks[i] + " | " + divs[i] + " | " + str(ids[i]))
+    for index in range(len(names)):
+        print(names[index]+ " | "  + ranks[index] + " | " + divs[index] + " | " + str(ids[index]))
         print("______________________________")
+
+
+def search_crew(names, ranks, divs, ids):
+    search_term = input ("Enter a search term")
+    for name in names:
+        if search_term in name:
+            print(name)
 
 def main():
     names, ranks, divisions, id = init_database()
-    display_roster(names, ranks, divisions, id)   
+    user_choice = display_menu()  
 
 
 if __name__ == "__main__":
     main()
+
 
 
     
