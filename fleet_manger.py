@@ -144,19 +144,8 @@ def main():
             filter_by_division(names, divisions) 
         elif user_choice == "7":
             calculate_payroll(ranks)
-        
-        
-
-        
-
-
-       
-       
-       
-       
-       
-       
-       
+        elif user_choice == "8":
+            count_officers(ranks)
         elif user_choice == "9":
             run_program = False
             print("Thanks")  
