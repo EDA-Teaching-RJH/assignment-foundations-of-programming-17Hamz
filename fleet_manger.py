@@ -8,7 +8,7 @@ def init_database():
     return names, ranks, division, id
 
 def display_menu():
-    student_name = input("what is your name")
+    student_name = input("what is your name ")
     print("Fleet Management System")
     print("1. Add Member")
     print("2. Remove Member")
@@ -20,17 +20,17 @@ def display_menu():
     print("8. Count Officers")
     print("9. Exit")
     print(student_name + " is logged into the system")
-    user_choice = input("Enter an option number")
+    user_choice = input("Enter an option number ")
     return user_choice
 
 def add_member(names, ranks, divs, ids):
     """
     Adds a new crew member. Checks that the id is unique and the rank is valid.
     """
-    new_name = input("what is the name of the member you want to add")
-    new_division = input ("What is the divsion you want to add")
-    new_rank = input("What is the rank of the member").strip()
-    new_id = int(input("What is the id of the new member").strip())
+    new_name = input("what is the name of the member you want to add ")
+    new_division = input ("What is the divsion you want to add ")
+    new_rank = input("What is the rank of the member ").strip()
+    new_id = int(input("What is the id of the new member ").strip())
     valid_rank = False
     if new_rank in ranks:
         valid_rank = True
@@ -66,9 +66,9 @@ def remove_member(names, ranks, divs, ids):
     return names, ranks, divs, ids
 
 def update_rank(names, ranks, ids):
-    id_to_update = input("Enter Id to update rank")
+    id_to_update = input("Enter Id to update rank ")
     if id_to_update in ids:
-        new_rank = input("Enter updated rank")
+        new_rank = input("Enter updated rank ")
         index_to_update = ids.index(id_to_update)
         ranks[index_to_update] = new_rank
     else:    
@@ -85,15 +85,27 @@ def display_roster(names, ranks, divs, ids):
 
 
 def search_crew(names, ranks, divs, ids):
-    search_term = input ("Enter a search term")
+    search_term = input ("Enter a search term ")
     for name in names:
         if search_term in name:
             print(name)
 
+def filter_by_division(names, divs):
+    user_chosen_divison = input ("Choose between Command, Operations, or Sciences ").strip()
+    if user_chosen_divison == "Command" or user_chosen_divison == "Operations" or user_chosen_divison == "Sciences":
+        for index in range(len(names)):
+            if divs[index] == user_chosen_divison: 
+                print (names[index])
+    else:
+        print("No members in that divison")       
+
+
+                                 
+
 def main():
     names, ranks, divisions, id = init_database()
-    user_choice = display_menu()  
-
+    user_choice = display_menu()
+    
 
 if __name__ == "__main__":
     main()
