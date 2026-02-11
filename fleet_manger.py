@@ -132,8 +132,22 @@ def main():
 
         if user_choice == "1":
             add_member(names, ranks, divisions, id)
-        if user_choice == "2":
+        elif user_choice == "2":
             remove_member(names, ranks, divisions, id)
+        elif user_choice == "3":
+            update_rank(names, ranks, id)
+        elif user_choice == "4": 
+             display_roster(names, ranks, divisions, id)
+        elif user_choice == "5":
+            search_crew(names, ranks, divisions, id)
+        elif user_choice == "6": 
+            filter_by_division(names, divisions) 
+        elif user_choice == "7":
+            calculate_payroll(ranks)
+        
+        
+
+        
 
 
        
