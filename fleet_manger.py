@@ -125,8 +125,20 @@ def count_officers(ranks):
 
 def main():
     names, ranks, divisions, id = init_database()
-    user_choice = display_menu()
-   
+    run_program = True
+    while run_program:
+        user_choice = display_menu()
+        
+
+        if user_choice == "1":
+            add_member(names, ranks, divisions, id)
+        elif user_choice == "9":
+            run_program = False
+            print("Thanks")  
+        else:
+            print("Please enter a valid option number")
+
+    
     
 
 if __name__ == "__main__":
