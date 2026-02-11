@@ -97,7 +97,21 @@ def filter_by_division(names, divs):
             if divs[index] == user_chosen_divison: 
                 print (names[index])
     else:
-        print("No members in that divison")       
+        print("No members in that divison")   
+
+def calculate_payroll(ranks):
+    total_cost = 0 
+    for rank in ranks:
+        if rank == "Captain":
+            total_cost = total_cost + 1000
+        elif rank == "Commander":
+            total_cost = total_cost + 800
+        elif rank == "Lt. Commander":
+            total_cost = total_cost + 600 
+        else:
+            total_cost = total_cost + 400
+    return total_cost
+
 
 
                                  
