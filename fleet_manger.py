@@ -112,6 +112,13 @@ def calculate_payroll(ranks):
             total_cost = total_cost + 400
     return total_cost
 
+def count_officers(ranks):
+    total_officers = 0
+    for rank in ranks:
+        if rank == "Captain" or rank == "Commander":
+            total_officers = total_officers + 1
+    return total_officers        
+
 
 
                                  
@@ -119,6 +126,7 @@ def calculate_payroll(ranks):
 def main():
     names, ranks, divisions, id = init_database()
     user_choice = display_menu()
+   
     
 
 if __name__ == "__main__":
