@@ -132,6 +132,17 @@ def main():
 
         if user_choice == "1":
             add_member(names, ranks, divisions, id)
+        if user_choice == "2":
+            remove_member(names, ranks, divisions, id)
+
+
+       
+       
+       
+       
+       
+       
+       
         elif user_choice == "9":
             run_program = False
             print("Thanks")  
