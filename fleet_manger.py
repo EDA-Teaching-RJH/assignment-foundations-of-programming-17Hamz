@@ -98,7 +98,7 @@ def filter_by_division(names, divs):
             if divs[index] == user_chosen_divison: 
                 print (names[index])
     else:
-        print("No members in that divison")   
+        print("Error - Can only filter between Command Operations or Sciences")   
 
 def calculate_payroll(ranks):
     total_cost = 0 
