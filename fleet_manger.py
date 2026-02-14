@@ -1,10 +1,10 @@
 
 
 def init_database():
-    names = ["Picard", "Riker", "Data", "Worf", "Geordi"]
-    ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lt. Commander"]
-    division = ["Command", "Command", "Operations", "Security", "Engineering"]
-    id = [1, 2, 3, 4, 5]
+    names = ["Picard", "Riker", "Data", "Worf", "Geordi", "Jeff"]
+    ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Lt. Commander", "Ensign"]
+    division = ["Command", "Command", "Operations", "Security", "Engineering","Sciences"]
+    id = [1, 2, 3, 4, 5, 6]
     return names, ranks, division, id
 
 def display_menu():
@@ -66,11 +66,12 @@ def remove_member(names, ranks, divs, ids):
     return names, ranks, divs, ids
 
 def update_rank(names, ranks, ids):
-    id_to_update = input("Enter Id to update rank ")
+    id_to_update = int(input("Enter Id to update rank "))
     if id_to_update in ids:
         new_rank = input("Enter updated rank ")
         index_to_update = ids.index(id_to_update)
         ranks[index_to_update] = new_rank
+        print("Rank updated")
     else:    
         print("Error inavlid id")
     return names, ranks, ids    
@@ -127,7 +128,7 @@ def main():
     names, ranks, divisions, id = init_database()
     run_program = True
     while run_program:
-        user_choice = display_menu()
+        user_choice = display_menu().strip()
         
 
         if user_choice == "1":
