@@ -53,7 +53,7 @@ def remove_member(names, ranks, divs, ids):
     """
     Remove a member using their ID
     """
-    id_to_remove = input("Enter member ID to remove: ")
+    id_to_remove = int(input("Enter member ID to remove: "))
     if id_to_remove in ids:
         index_to_remove = ids.index(id_to_remove)
         names.pop(index_to_remove)
