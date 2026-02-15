@@ -31,6 +31,7 @@ def run_system_monolith():
             
             for i in range(len(n)):
                 print(n[i] + " - " + r[i]) 
+            
                 
         elif opt == "2":
             new_name = input("Name: ")
